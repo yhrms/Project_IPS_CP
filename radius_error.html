@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Cautivo</title>
+    <style>
+      
+
+            body{
+                background-color: #000;
+                overflow: hidden;
+                background-image: linear-gradient(to right, #2c3e50, #4ca1af);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                background-attachment: fixed;
+            }
+            .background{
+                width: 430px;
+                height: 520px;
+                position: absolute;
+                transform: translate(-50%,-50%);
+                left: 50%;
+                top: 50%;
+            }
+
+
+            form{
+                height: 420px;
+                width: 400px;
+                background-color: rgb(40, 41, 39);
+                position: absolute;
+                transform: translate(-50%,-50%);
+                top: 50%;
+                left: 50%;
+                border-radius: 10px;
+                border: 2px solid rgba(255,255,255,0.1);
+                padding: 50px 35px;
+            }
+
+            form *{
+                font-family: 'Poppins',sans-serif;
+                color: #ffffff;
+                letter-spacing: 0.5px;
+                outline: none;
+                border: none;
+            }
+
+
+            label{
+                display: block;
+                margin-top: 12px;
+                font-size: 16px;
+                font-weight: 500;
+                text-align: center;
+                font-weight: bold;
+            }
+            input{
+                display: block;
+                height: 50px;
+                width: 100%;
+                background-color: rgba(255,255,255,0.07);
+                border-radius: 20px;
+                padding: 0 10px;
+                margin-top: 8px;
+                font-size: 14px;
+                font-weight: 300;
+                border: rgb(112, 112, 112) solid 1px;
+
+            }
+
+            h1 {
+                border-bottom: white solid 1px;
+                padding-bottom: 5%;
+            }
+
+            .bt {
+                background-color: lightseagreen;
+                color: white;
+                font-weight: bold;
+            }
+
+
+            .bt:hover {
+                background-color: orange;
+                color: black;
+                font-weight: bold;
+            }
+
+    </style>
+</head>
+<body>
+
+    <form method="post" action="$PORTAL_ACTION$">
+        <h1>Login</h1>
+        <label for="auth_user">Usuario</label>
+        <input name="auth_user" type="text">
+
+        <label for="auth_pass">Contraseña</label>
+        <input name="auth_pass" type="password">
+
+        <!-- <label for="auth_voucher">Ticket</label>
+        <input name="auth_voucher" type="text"> -->
+        
+        <input name="redirurl" type="hidden" value="$PORTAL_REDIRURL$">
+        <input name="zone" type="hidden" value="$PORTAL_ZONE$">
+        <br>
+        <p style="color: red; text-align: center;">El Usuario/Contraseña es incorrecto</p>
+        <br>
+        <input class="bt" name="accept" type="submit" value="Continuar">
+
+     </form>
+    
+</body>
+</html>
